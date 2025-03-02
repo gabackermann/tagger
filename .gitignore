@@ -128,3 +128,5 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+auth_info/session-5519984501214.0.json
+/auth_info
