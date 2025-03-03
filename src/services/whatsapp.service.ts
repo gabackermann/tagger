@@ -3,7 +3,7 @@ import makeWASocket, {
   DisconnectReason,
 } from "@whiskeysockets/baileys";
 import qrcode from "qrcode-terminal";
-import { handleMessage } from "../controllers/message.controller";
+import { handleMessage } from "../controllers/message.controllers";
 
 let sock: any;
 
@@ -17,7 +17,7 @@ export const connectToWhatsApp = async () => {
 
   sock.ev.on("creds.update", saveCreds);
 
-  sock.ev.on("connection.update", (update) => {
+  sock.ev.on("connection.update", (update: { connection: any; lastDisconnect: any; }) => {
     const { connection, lastDisconnect } = update;
     if (connection === "close") {
       const shouldReconnect =
@@ -31,11 +31,11 @@ export const connectToWhatsApp = async () => {
     }
   });
 
-  sock.ev.on("messages.upsert", async (m) => {
+  sock.ev.on("messages.upsert", async (m: any) => {
     await handleMessage(sock, m);
   });
 
-  sock.ev.on("qr", (qr) => {
+  sock.ev.on("qr", (qr: string) => {
     qrcode.generate(qr, { small: true });
   });
 };

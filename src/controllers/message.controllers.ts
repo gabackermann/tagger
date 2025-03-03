@@ -1,4 +1,5 @@
-import { isUserAdmin } from "../services/group.service";
+import { isRegisteredGroup, isUserAdmin } from "../services/group.service";
+import { getGroupMetadata } from "../services/groupMetadata.service";
 import { mentionAll } from "../services/mention.service";
 
 export const handleMessage = async (sock: any, m: any) => {
@@ -9,15 +10,23 @@ export const handleMessage = async (sock: any, m: any) => {
   const text =
     message.message.conversation || message.message.extendedTextMessage?.text;
 
-  // Apenas processa mensagens de grupos
+  if (text?.toLowerCase() !== "!m") return;
   if (!remoteJid?.endsWith("@g.us")) return;
 
+  // 🔹 Obtém metadados do grupo com cache
+  const groupMetadata = await getGroupMetadata(sock, remoteJid);
+  console.log("📊 Dados do grupo:", groupMetadata);
+
+  if (!groupMetadata) return;
+
   const sender = message.key.participant || message.participant;
+  const groupIsValid = await isRegisteredGroup(groupMetadata);
+  console.log("Grupo registrado?", groupIsValid);
 
-  // Verifica se é admin
-  const isAdmin = await isUserAdmin(sock, remoteJid, sender);
+  const isAdmin = await isUserAdmin(groupMetadata, sender);
+  console.log(`👮 ${sender} é admin?`, isAdmin);
 
-  if (isAdmin && text?.toLowerCase() === "!mencionar") {
+  if (isAdmin && groupIsValid) {
     await mentionAll(sock, remoteJid);
   }
 };

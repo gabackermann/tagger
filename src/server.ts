@@ -1,5 +1,5 @@
 import express from "express";
-import { connectToWhatsApp } from "./services/whatsapp.services";
+import { connectToWhatsApp } from "./services/whatsapp.service";
 import dotenv from "dotenv";
 
 dotenv.config();

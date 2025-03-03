@@ -1,13 +1,20 @@
+import {associatedsGroup} from "../utils/associateds";
+
 export const isUserAdmin = async (
-  sock: any,
-  groupJid: string,
+  metadata: any,
   userJid: string
 ): Promise<boolean> => {
-  const groupMetadata = await sock.groupMetadata(groupJid);
 
-  const admins = groupMetadata.participants
-    .filter((p) => p.admin === "admin" || p.admin === "superadmin")
-    .map((p) => p.id);
+  const admins = metadata.participants
+    .filter((p: { admin: string; }) => p.admin === "admin" || p.admin === "superadmin")
+    .map((p: { id: any; }) => p.id);
 
   return admins.includes(userJid);
+};
+
+export const isRegisteredGroup = async (
+  metadata: any,
+): Promise<boolean> => {
+
+  return Boolean(associatedsGroup.find((group: any)=> metadata.subject.toLowerCase().includes(group.keyword.toLowerCase())))
 };
