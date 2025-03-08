@@ -4,6 +4,7 @@ import makeWASocket, {
 } from "@whiskeysockets/baileys";
 import qrcode from "qrcode-terminal";
 import { handleMessage } from "../controllers/message.controllers";
+import { startAds } from "../controllers/ads.controllers";
 
 let sock: any;
 
@@ -13,23 +14,30 @@ export const connectToWhatsApp = async () => {
   sock = makeWASocket({
     auth: state,
     printQRInTerminal: true,
+    browser: ["Firefox", "MacOS", "117"],
+    connectTimeoutMs: 60_000,
+    syncFullHistory: false,
   });
 
   sock.ev.on("creds.update", saveCreds);
 
-  sock.ev.on("connection.update", (update: { connection: any; lastDisconnect: any; }) => {
-    const { connection, lastDisconnect } = update;
-    if (connection === "close") {
-      const shouldReconnect =
-        (lastDisconnect?.error as any)?.output?.statusCode !==
-        DisconnectReason.loggedOut;
-      if (shouldReconnect) {
-        connectToWhatsApp();
+  sock.ev.on(
+    "connection.update",
+    (update: { connection: any; lastDisconnect: any }) => {
+      const { connection, lastDisconnect } = update;
+      if (connection === "close") {
+        const shouldReconnect =
+          (lastDisconnect?.error as any)?.output?.statusCode !==
+          DisconnectReason.loggedOut;
+        if (shouldReconnect) {
+          connectToWhatsApp();
+        }
+      } else if (connection === "open") {
+        console.log("✅ Conectado ao WhatsApp!");
+        startAds(sock);
       }
-    } else if (connection === "open") {
-      console.log("✅ Conectado ao WhatsApp!");
     }
-  });
+  );
 
   sock.ev.on("messages.upsert", async (m: any) => {
     await handleMessage(sock, m);
