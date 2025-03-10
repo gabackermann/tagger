@@ -16,6 +16,14 @@ export const associatedsGroup = [
     keyword: "pokéhub",
   },
   {
+    responsibleId: "5513981494768",
+    keyword: "Vermilion",
+  },
+  {
+    responsibleId: "554284353780",
+    keyword: "AuroraGeek",
+  },
+  {
     responsibleId: "5511989017858",
     keyword: "Sylveon",
   },
