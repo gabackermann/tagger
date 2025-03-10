@@ -5,6 +5,7 @@ import makeWASocket, {
 import qrcode from "qrcode-terminal";
 import { handleMessage } from "../controllers/message.controllers";
 import { startAds } from "../controllers/ads.controllers";
+import {pino} from "pino";
 
 let sock: any;
 
@@ -15,8 +16,9 @@ export const connectToWhatsApp = async () => {
     auth: state,
     printQRInTerminal: true,
     browser: ["Firefox", "MacOS", "117"],
-    connectTimeoutMs: 60_000,
+    connectTimeoutMs: 300_000,
     syncFullHistory: false,
+    logger: pino({ level: "warn" }),
   });
 
   sock.ev.on("creds.update", saveCreds);
@@ -34,7 +36,7 @@ export const connectToWhatsApp = async () => {
         }
       } else if (connection === "open") {
         console.log("✅ Conectado ao WhatsApp!");
-        startAds(sock);
+        // startAds(sock);
       }
     }
   );

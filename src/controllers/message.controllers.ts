@@ -10,39 +10,38 @@ export const handleMessage = async (sock: any, m: any) => {
   if (!message.message) return;
 
   const remoteJid = message.key.remoteJid;
+
   const text =
     message.message.conversation || message.message.extendedTextMessage?.text;
 
-  const args = text.trim().split(/\s+/);
-  const command = args.shift()?.toLowerCase();
+  if (!text) return;
+
+  const lowerText = text.toLowerCase();
+  const command = availableCommands.find((cmd) => lowerText.includes(cmd));
+  if (!command) return;
+
   const sender = message.key.participant || message.participant;
-
-  if (!command || !availableCommands.includes(command)) return;
-
-  console.log(remoteJid);
   if (remoteJid?.endsWith("@g.us")) {
     const groupMetadata = await getGroupMetadata(sock, remoteJid);
-    console.log("📊 Dados do grupo:", groupMetadata);
 
     if (!groupMetadata) return;
 
     const groupIsValid = await isRegisteredGroup(groupMetadata);
-    console.log("Grupo registrado?", groupIsValid);
 
     const isAdmin = await isUserAdmin(groupMetadata, sender);
-    console.log(`👮 ${sender} é admin?`, isAdmin);
 
     if (isAdmin && groupIsValid) {
       await handleCommand(sock, remoteJid, text);
     }
   }
 
-  if (remoteJid?.endsWith("@s.whatsapp.net")) {
-    console.log("teste");
-    const senderId = remoteJid.replace("@s.whatsapp.net", "");
-    const isRegistered = isRegisteredResponsible(senderId);
-    if (isRegistered) {
-      await handlePrivateCommand(sock, remoteJid, text, senderId);
-    }
-  }
+  // if (remoteJid?.endsWith("@s.whatsapp.net")) {
+  //   console.log("teste");
+  //   return
+  //   const senderId = remoteJid.replace("@s.whatsapp.net", "");
+  //   const isRegistered = isRegisteredResponsible(senderId);
+  //   if (isRegistered) {
+  //     await handlePrivateCommand(sock, remoteJid, text, senderId);
+  //   }
+  // }
 };
