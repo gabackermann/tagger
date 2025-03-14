@@ -1,1 +1,1 @@
-export const availableCommands = ["!s", "!m", "!p"];
+export const availableCommands = ["!s", "!m", "!p","!on"];

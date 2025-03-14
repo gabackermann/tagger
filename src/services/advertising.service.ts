@@ -1,22 +1,43 @@
-const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+import { WASocket } from "@whiskeysockets/baileys";
+import pLimit from "p-limit";
 
-export const scheduleDailyAds = async (sock: any, groupIds: any[]) => {
-  console.log("🚀 Iniciando envio de mensagens publicitárias...");
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-  for (let i = 0; i < groupIds.length; i++) {
-    let groupToSend = groupIds[i];
-
-    try {
-      await sock.sendMessage(groupToSend, {
-        text: "Oferecimento, Ilha Cinnabar, entre no grupo: https://chat.whatsapp.com/EQMnd8NP9HUBDH6RY14202",
+const adsMessage = async (sock: WASocket, groupId: any, adMessage: any) => {
+  try {
+    if (adMessage.image) {
+      await sock.sendMessage(groupId, {
+        image: { url: adMessage.image },
+        caption: adMessage.message,
       });
-      console.log(`✅ Mensagem enviada para o grupo: ${groupToSend}`);
-
-      await sleep(120000);
-    } catch (error) {
-      console.error(`❌ Erro ao enviar mensagem para o grupo ${groupToSend}:`, error);
+    } else {
+      await sock.sendMessage(groupId, {
+        text: adMessage.message,
+      });
     }
-  }
 
-  console.log("📢 Todas as mensagens foram enviadas com sucesso!");
+    console.log(`📢 Mensagem enviada para o grupo: ${groupId}`);
+  } catch (e) {
+    console.error(`❌ Falhou ao enviar mensagem para o grupo: ${groupId}`, e);
+  }
+};
+
+export const scheduleDailyAds = async (
+  sock: WASocket,
+  groupIds: any[],
+  adMessage: any
+) => {
+  console.log(`📢 Enviando anúncio: ${adMessage.message}`);
+
+  const limit = pLimit(5);
+
+  const tasks = groupIds.map((groupId) =>
+    limit(async () => {
+      await sleep(2000);
+      await adsMessage(sock, groupId, adMessage);
+    })
+  );
+
+  await Promise.all(tasks);
+  console.log("✅ Todas as mensagens foram enviadas com sucesso!");
 };

@@ -1,6 +1,7 @@
+import { isBotAlive } from "../services/alive.service";
 import { mentionAll } from "../services/mention.service";
 import { handleRaffleCommand } from "../services/raffle.service";
-import { Ads } from "../utils/ads";
+// import { Ads } from "../utils/ads";
 
 export const handleCommand = async (
   sock: any,
@@ -13,9 +14,9 @@ export const handleCommand = async (
 
   if (!command) return;
 
-  if (!isGroupPremium && Math.random() < 0.7) {
-    await Ads(sock, remoteJid);
-  }
+  // if (!isGroupPremium && Math.random() < 0.7) {
+  //   await Ads(sock, remoteJid);
+  // }
 
   switch (command) {
     case "!m":
@@ -24,6 +25,10 @@ export const handleCommand = async (
 
     case "!s":
       await handleRaffleCommand(sock, remoteJid, args);
+      break;
+
+    case "!on":
+      await isBotAlive(sock, remoteJid);
       break;
 
     default:
