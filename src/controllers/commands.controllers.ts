@@ -1,15 +1,21 @@
 import { mentionAll } from "../services/mention.service";
 import { handleRaffleCommand } from "../services/raffle.service";
+import { Ads } from "../utils/ads";
 
 export const handleCommand = async (
   sock: any,
   remoteJid: string,
-  text: string
+  text: string,
+  isGroupPremium: boolean
 ) => {
   const args = text.trim().split(/\s+/);
   const command = args.shift()?.toLowerCase();
 
   if (!command) return;
+
+  if (!isGroupPremium && Math.random() < 0.7) {
+    await Ads(sock, remoteJid);
+  }
 
   switch (command) {
     case "!m":
@@ -17,10 +23,10 @@ export const handleCommand = async (
       break;
 
     case "!s":
-      handleRaffleCommand(sock, remoteJid, args);
+      await handleRaffleCommand(sock, remoteJid, args);
       break;
 
     default:
-      return; // Ignora comandos desconhecidos
+      return;
   }
 };

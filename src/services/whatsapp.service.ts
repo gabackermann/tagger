@@ -4,7 +4,6 @@ import makeWASocket, {
 } from "@whiskeysockets/baileys";
 import qrcode from "qrcode-terminal";
 import { handleMessage } from "../controllers/message.controllers";
-import { startAds } from "../controllers/ads.controllers";
 import {pino} from "pino";
 
 let sock: any;
@@ -36,7 +35,6 @@ export const connectToWhatsApp = async () => {
         }
       } else if (connection === "open") {
         console.log("✅ Conectado ao WhatsApp!");
-        // startAds(sock);
       }
     }
   );
@@ -48,4 +46,4 @@ export const connectToWhatsApp = async () => {
   sock.ev.on("qr", (qr: string) => {
     qrcode.generate(qr, { small: true });
   });
-};
+};1

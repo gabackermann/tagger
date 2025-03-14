@@ -14,7 +14,9 @@ export const isUserAdmin = async (
 
 export const isRegisteredGroup = async (
   metadata: any,
-): Promise<boolean> => {
+): Promise<any> => {
 
-  return Boolean(associatedsGroup.find((group: any)=> metadata.subject.toLowerCase().includes(group.keyword.toLowerCase())))
+  const registeredGroup = associatedsGroup.find((group: any)=> metadata.subject.toLowerCase().includes(group.keyword.toLowerCase())) || false
+
+  return registeredGroup 
 };

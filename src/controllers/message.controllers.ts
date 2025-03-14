@@ -28,10 +28,12 @@ export const handleMessage = async (sock: any, m: any) => {
 
     const groupIsValid = await isRegisteredGroup(groupMetadata);
 
+    const isGroupPremium: boolean = groupIsValid?.isPremium ?? false;
+
     const isAdmin = await isUserAdmin(groupMetadata, sender);
 
     if (isAdmin && groupIsValid) {
-      await handleCommand(sock, remoteJid, text);
+      await handleCommand(sock, remoteJid, text, isGroupPremium);
     }
   }
 
