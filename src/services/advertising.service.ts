@@ -1,8 +1,6 @@
 import { WASocket } from "@whiskeysockets/baileys";
 import pLimit from "p-limit";
 
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
 const adsMessage = async (sock: WASocket, groupId: any, adMessage: any) => {
   try {
     if (adMessage.image) {
@@ -31,11 +29,16 @@ export const scheduleDailyAds = async (
 
   const limit = pLimit(5);
 
-  const tasks = groupIds.map((groupId) =>
-    limit(async () => {
-      await sleep(2000);
-      await adsMessage(sock, groupId, adMessage);
-    })
+  const tasks = groupIds.map((groupId, index) =>
+    limit(
+      () =>
+        new Promise((resolve) => {
+          setTimeout(async () => {
+            await adsMessage(sock, groupId, adMessage);
+            resolve(null);
+          }, index * 2000);
+        })
+    )
   );
 
   await Promise.all(tasks);

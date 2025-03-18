@@ -10,6 +10,14 @@ export const startAds = async (sock: any) => {
     const now = new Date();
     const currentHour = parseInt(format(now, "H", { timeZone: TIME_ZONE }));
     const currentMinute = parseInt(format(now, "m", { timeZone: TIME_ZONE }));
+    const currentTime = `${currentHour}:${currentMinute}`;
+
+    if (lastSentTime === currentTime) {
+      console.log(
+        "⚠️ Já enviamos um anúncio nesse horário. Evitando duplicação."
+      );
+      return;
+    }
 
     const adMessage = propagandasSemMencionar.find(
       (ad) => ad.hour === currentHour && ad.minute === currentMinute
@@ -20,12 +28,13 @@ export const startAds = async (sock: any) => {
       return;
     }
 
+    lastSentTime = currentTime;
+
     const chats = await sock.groupFetchAllParticipating();
     const groupArr = Object.values(chats);
 
     const matchingGroups = groupArr.filter((group: any) => {
       if (!group.id.includes("@g.us")) return false;
-
       const groupName = group.subject.toLowerCase();
       return associatedsGroup.some((associated) =>
         groupName.includes(associated.keyword.toLowerCase())
@@ -44,8 +53,30 @@ export const startAds = async (sock: any) => {
       return;
     }
 
-    await scheduleDailyAds(sock, matchingGroupIds, adMessage);
-    console.log(`📢 Anúncio enviado: "${adMessage.message}"`);
+    const sentGroups = new Set<string>();
+
+    const uniqueGroupIds = matchingGroupIds.filter((groupId) => {
+      if (sentGroups.has(groupId)) {
+        return false;
+      }
+      sentGroups.add(groupId);
+      return true;
+    });
+
+    if (uniqueGroupIds.length > 0) {
+      // 🔥 Rodando envio em segundo plano (sem bloquear o bot)
+      scheduleDailyAds(sock, uniqueGroupIds, adMessage)
+        .then(() => {
+          console.log(
+            `📢 Anúncio enviado para ${uniqueGroupIds.length} grupos.`
+          );
+        })
+        .catch((error) => {
+          console.error("❌ Erro ao enviar anúncios:", error);
+        });
+    } else {
+      console.log("🔄 Nenhum grupo novo para envio, evitando duplicação.");
+    }
   } catch (error) {
     console.error("❌ Erro ao buscar grupos:", error);
   }

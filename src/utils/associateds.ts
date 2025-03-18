@@ -15,8 +15,18 @@ export const associatedsGroup = [
     isPremium: false,
   },
   {
+    responsibleId: "5511988162777",
+    keyword: "poke 1 tcg",
+    isPremium: false,
+  },
+  {
     responsibleId: "5516997811602",
     keyword: "lucario",
+    isPremium: false,
+  },
+  {
+    responsibleId: "5543991559239",
+    keyword: "BOO & KOC CARD SHOP",
     isPremium: false,
   },
   {
@@ -109,6 +119,21 @@ export const associatedsGroup = [
     keyword: "MorpheuTCG",
     isPremium: false,
   },
+  {
+    responsibleId: "5527992052358",
+    keyword: "James TCG",
+    isPremium: false,
+  },
+  {
+    responsibleId: "5516993141051",
+    keyword: "Escola de Colecionadores",
+    isPremium: false,
+  },
+  {
+    responsibleId: "554298097260",
+    keyword: "pokegimi",
+    isPremium: false,
+  },
 ];
 
 // export const associatedsGroup = [
@@ -119,10 +144,6 @@ export const associatedsGroup = [
 //   {
 //     responsibleId: "5527988534645",
 //     keyword: "Teste",
-//   },
-//   {
-//     responsibleId: "5527988534645",
-//     keyword: "bot",
 //   },
 // ];
 

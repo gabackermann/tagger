@@ -36,10 +36,10 @@ export const connectToWhatsApp = async () => {
         }
       } else if (connection === "open") {
         console.log("✅ Conectado ao WhatsApp!");
-        setInterval(() => {
-          console.log("🔄 Verificando horário para envio de anúncios...");
-          startAds(sock);
-        }, 60 * 1000);
+        // setInterval(() => {
+        //   console.log("🔄 Verificando horário para envio de anúncios...");
+        //   startAds(sock);
+        // }, 60 * 1000);
       }
     }
   );
@@ -52,4 +52,3 @@ export const connectToWhatsApp = async () => {
     qrcode.generate(qr, { small: true });
   });
 };
-1;
