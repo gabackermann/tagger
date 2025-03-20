@@ -15,6 +15,11 @@ export const associatedsGroup = [
     isPremium: false,
   },
   {
+    responsibleId: "5511947178069",
+    keyword: "zorua",
+    isPremium: false,
+  },
+  {
     responsibleId: "5511988162777",
     keyword: "poke 1 tcg",
     isPremium: false,
