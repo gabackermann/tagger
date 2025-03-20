@@ -19,7 +19,7 @@ let leilaoAtivo: {
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export const startAuction = async (sock: any, remoteJid: string) => {
-  const grupo = associatedsGroup.find((g) => g.keyword.includes("Ilha"));
+  const grupo = associatedsGroup.find((g) => g.keyword.includes("Teste"));
 
   if (!grupo) return;
 
@@ -101,11 +101,6 @@ export const registrarLance = async (
       quotedMsgContent = quotedMsg?.quotedMessage?.extendedTextMessage?.text;
     }
 
-    console.log("quotedMsg:", quotedMsg);
-    console.log("quotedParticipantComplete:", quotedParticipantComplete);
-    console.log("quotedParticipant:", quotedParticipant);
-    console.log("quotedMsgContent:", quotedMsgContent);
-
     if (!quotedMsgContent) return;
 
     const valor = parseFloat(
@@ -136,6 +131,35 @@ export const registrarLance = async (
   }
 };
 
+const enviarResumoCompradores = async (sock: any) => {
+  const compradoresMap = new Map();
+
+  data.forEach((item: any) => {
+    if (item.quem_comprou && item.valor_venda) {
+      if (!compradoresMap.has(item.quem_comprou)) {
+        compradoresMap.set(item.quem_comprou, []);
+      }
+      compradoresMap.get(item.quem_comprou).push(item);
+    }
+  });
+
+  for (const [comprador, cartas] of compradoresMap.entries()) {
+    let total = 0;
+    let detalheMensagem = "🧾 *Resumo das cartas arrematadas:*\n\n";
+
+    cartas.forEach((carta: any) => {
+      detalheMensagem += `🃏 *${carta.nome}* — R$${carta.valor_venda}\n`;
+      total += parseFloat(carta.valor_venda);
+    });
+
+    detalheMensagem += `\n💰 *Total:* R$${total.toFixed(2)}`;
+
+    await sock.sendMessage(`${comprador}@s.whatsapp.net`, {
+      text: detalheMensagem,
+    });
+  }
+};
+
 export const proximaCarta = async (sock: any) => {
   if (leilaoAtivo) {
     let proximaIndex = leilaoAtivo.index + 1;
@@ -160,6 +184,9 @@ export const proximaCarta = async (sock: any) => {
       await sock.sendMessage(leilaoAtivo.grupo, {
         text: "Leilão finalizado, obrigado a todos!",
       });
+
+      await enviarResumoCompradores(sock);
+
       leilaoAtivo = null;
     }
   }
@@ -172,6 +199,9 @@ export const finalizarLeilao = async (sock: any) => {
     await sock.sendMessage(leilaoAtivo.grupo, {
       text: "Leilão finalizado, obrigado a todos!",
     });
+
+    await enviarResumoCompradores(sock);
+
     leilaoAtivo = null;
   }
 };
