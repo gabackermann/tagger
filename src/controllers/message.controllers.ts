@@ -3,7 +3,6 @@ import { getGroupMetadata } from "../services/groupMetadata.service";
 import { isRegisteredResponsible } from "../utils/associateds";
 import { availableCommands } from "../utils/avaibleCommands";
 import { handleCommand } from "./commands.controllers";
-import { handlePrivateCommand } from "./privacy.controllers";
 
 export const handleMessage = async (sock: any, m: any) => {
   const message = m.messages[0];
@@ -33,17 +32,7 @@ export const handleMessage = async (sock: any, m: any) => {
     const isAdmin = await isUserAdmin(groupMetadata, sender);
 
     if (isAdmin && groupIsValid) {
-      await handleCommand(sock, remoteJid, text, isGroupPremium);
+      await handleCommand(sock, remoteJid, text, isGroupPremium, message);
     }
   }
-
-  // if (remoteJid?.endsWith("@s.whatsapp.net")) {
-  //   console.log("teste");
-  //   return
-  //   const senderId = remoteJid.replace("@s.whatsapp.net", "");
-  //   const isRegistered = isRegisteredResponsible(senderId);
-  //   if (isRegistered) {
-  //     await handlePrivateCommand(sock, remoteJid, text, senderId);
-  //   }
-  // }
 };

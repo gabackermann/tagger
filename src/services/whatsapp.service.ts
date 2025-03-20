@@ -5,7 +5,6 @@ import makeWASocket, {
 import qrcode from "qrcode-terminal";
 import { handleMessage } from "../controllers/message.controllers";
 import { pino } from "pino";
-import { startAds } from "../controllers/ads.controllers";
 
 let sock: any;
 
@@ -36,10 +35,6 @@ export const connectToWhatsApp = async () => {
         }
       } else if (connection === "open") {
         console.log("✅ Conectado ao WhatsApp!");
-        // setInterval(() => {
-        //   console.log("🔄 Verificando horário para envio de anúncios...");
-        //   startAds(sock);
-        // }, 60 * 1000);
       }
     }
   );

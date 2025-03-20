@@ -6,7 +6,7 @@ export const associatedsGroup = [
   },
   {
     responsibleId: "5527988534645",
-    keyword: "STAFF",
+    keyword: "Teste",
     isPremium: false,
   },
   {
@@ -117,11 +117,6 @@ export const associatedsGroup = [
   {
     responsibleId: "5511983666238",
     keyword: "Poképobre",
-    isPremium: false,
-  },
-  {
-    responsibleId: "5521988569043",
-    keyword: "MorpheuTCG",
     isPremium: false,
   },
   {
