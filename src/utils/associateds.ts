@@ -7,12 +7,12 @@ export const associatedsGroup = [
   {
     responsibleId: "5527988534645",
     keyword: "Teste",
-    isPremium: false,
+    isPremium: true,
   },
   {
     responsibleId: "5527988534645",
     keyword: "magikarp",
-    isPremium: false,
+    isPremium: true,
   },
   {
     responsibleId: "5511947178069",
@@ -22,7 +22,7 @@ export const associatedsGroup = [
   {
     responsibleId: "5511988162777",
     keyword: "poke 1 tcg",
-    isPremium: false,
+    isPremium: true,
   },
   {
     responsibleId: "5516997811602",
@@ -57,7 +57,7 @@ export const associatedsGroup = [
   {
     responsibleId: "5511970670479",
     keyword: "Pokéttox",
-    isPremium: false,
+    isPremium: true,
   },
   {
     responsibleId: "5519995000880",
@@ -87,7 +87,7 @@ export const associatedsGroup = [
   {
     responsibleId: "5513981494768",
     keyword: "vermilion",
-    isPremium: false,
+    isPremium: true,
   },
   {
     responsibleId: "554284353780",
@@ -112,7 +112,7 @@ export const associatedsGroup = [
   {
     responsibleId: "5517999754660",
     keyword: "TAKAHASHI",
-    isPremium: false,
+    isPremium: true,
   },
   {
     responsibleId: "5511983666238",
