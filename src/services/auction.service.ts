@@ -19,7 +19,7 @@ let leilaoAtivo: {
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export const startAuction = async (sock: any, remoteJid: string) => {
-  const grupo = associatedsGroup.find((g) => g.keyword.includes("Teste"));
+  const grupo = associatedsGroup.find((g) => g.keyword.includes("Ilha"));
 
   if (!grupo) return;
 

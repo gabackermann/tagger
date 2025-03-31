@@ -6,7 +6,7 @@ export const associatedsGroup = [
   },
   {
     responsibleId: "5527988534645",
-    keyword: "Teste",
+    keyword: "STAFF",
     isPremium: true,
   },
   {
@@ -15,19 +15,54 @@ export const associatedsGroup = [
     isPremium: true,
   },
   {
+    responsibleId: "11989743724",
+    keyword: "Poke Yuan",
+    isPremium: false,
+  },
+  {
+    responsibleId: "13996758032",
+    keyword: "Deixei Peguei",
+    isPremium: true,
+  },
+  {
+    responsibleId: "13996758032",
+    keyword: "OAK",
+    isPremium: false,
+  },
+  {
+    responsibleId: "5511914793626",
+    keyword: "TEC TCG",
+    isPremium: true,
+  },
+  {
+    responsibleId: "5566996616860",
+    keyword: "Taberna Nerd",
+    isPremium: false,
+  },
+  {
+    responsibleId: "74988392413",
+    keyword: "ZARD",
+    isPremium: true,
+  },
+  {
+    responsibleId: "11978488920",
+    keyword: "Giratina Store",
+    isPremium: true,
+  },
+  {
     responsibleId: "5511947178069",
     keyword: "zorua",
+    isPremium: false,
+  },
+  {
+    responsibleId: "5513991510919",
+    keyword: "shock league",
     isPremium: false,
   },
   {
     responsibleId: "5511988162777",
     keyword: "poke 1 tcg",
     isPremium: true,
-  },
-  {
-    responsibleId: "5516997811602",
-    keyword: "lucario",
-    isPremium: false,
   },
   {
     responsibleId: "5543991559239",
@@ -37,11 +72,6 @@ export const associatedsGroup = [
   {
     responsibleId: "5521971178880",
     keyword: "Aliança",
-    isPremium: false,
-  },
-  {
-    responsibleId: "556281398131",
-    keyword: "Arena",
     isPremium: false,
   },
   {
@@ -62,12 +92,12 @@ export const associatedsGroup = [
   {
     responsibleId: "5519995000880",
     keyword: "Temdetudogeek",
-    isPremium: false,
+    isPremium: true,
   },
   {
     responsibleId: "5521982573467",
     keyword: "MossLAX TCG",
-    isPremium: false,
+    isPremium: true,
   },
   {
     responsibleId: "5519982544132",
@@ -95,9 +125,14 @@ export const associatedsGroup = [
     isPremium: false,
   },
   {
-    responsibleId: "5511989017858",
-    keyword: "Sylveon",
+    responsibleId: "5563984839596",
+    keyword: "vogado eeveelutions",
     isPremium: false,
+  },
+  {
+    responsibleId: "5511989017858",
+    keyword: "Elite 3 TCG",
+    isPremium: true,
   },
   {
     responsibleId: "5521997031062",
@@ -115,9 +150,14 @@ export const associatedsGroup = [
     isPremium: true,
   },
   {
+    responsibleId: "5564992558461",
+    keyword: "NineStore",
+    isPremium: false,
+  },
+  {
     responsibleId: "5511983666238",
     keyword: "Poképobre",
-    isPremium: false,
+    isPremium: true,
   },
   {
     responsibleId: "5527992052358",
@@ -131,7 +171,7 @@ export const associatedsGroup = [
   },
   {
     responsibleId: "554298097260",
-    keyword: "pokegimi",
+    keyword: "POKEGIMI",
     isPremium: false,
   },
 ];

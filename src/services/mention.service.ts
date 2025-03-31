@@ -15,11 +15,11 @@ export const mentionAll = async (sock: any, groupJid: string) => {
   const invisibleChar = "\u200B";
   const mentionsText = participants.map(() => invisibleChar).join("");
 
-  const mensagemParaFree = `\n\n-------------------\n🔹 *MARCANDO TODOS!* 🔹\n${mentionsText}`;
+  const mensagemParaFree = `\n\n-------------------\n*ADM:* marcando todos.\n${mentionsText}`;
 
   if (associado?.isPremium) {
     await sock.sendMessage(groupJid, {
-      text: '🔹 *MARCANDO TODOS!* 🔹',
+      text: '*ADM:* marcando todos.',
       mentions: participants,
     });
   } else {
