@@ -1,20 +1,25 @@
-const groupCache = new Map<string, { metadata: any; timestamp: number }>();
-const CACHE_TTL = 2 * 60 * 1000; // 2 minutes
+const groupCache: {
+  [groupId: string]: {
+    nome: string;
+    metadata: any;
+    timestamp: number;
+  };
+} = {};
 
-export const getGroupMetadata = async (sock: any, groupJid: string) => {
-  const cached = groupCache.get(groupJid);
-  const now = Date.now();
+export const getGroupMetadata = async (sock: any, groupId: string) => {
+  const agora = Date.now();
+  const cache = groupCache[groupId];
 
-  if (cached && now - cached.timestamp < CACHE_TTL) {
-    return cached.metadata;
+  if (cache && agora - cache.timestamp < 10 * 60 * 1000) {
+    return cache.metadata;
   }
 
-  try {
-    const metadata = await sock.groupMetadata(groupJid);
-    groupCache.set(groupJid, { metadata, timestamp: now });
-    return metadata;
-  } catch (error) {
-    console.error(`Erro ao buscar metadados do grupo ${groupJid}:`, error);
-    return null;
-  }
+  const metadata = await sock.groupMetadata(groupId);
+  groupCache[groupId] = {
+    nome: metadata.subject,
+    metadata,
+    timestamp: agora,
+  };
+
+  return metadata;
 };
