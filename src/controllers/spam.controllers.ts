@@ -21,11 +21,12 @@ export const handleSpam = (sock: any, m: any) => {
   try {
     spamWorker.postMessage({ msg: m });
 
-    spamWorker.on("message", async (res) => {
+    spamWorker.once("message", async (res) => {
       const { action, groupId, text, key } = res;
 
       try {
         if (action === "notify-and-delete" && key && text) {
+          await sock.sendMessage(groupId, { text });
           await sock.sendMessage(groupId, { delete: key });
         }
       } catch (err) {
