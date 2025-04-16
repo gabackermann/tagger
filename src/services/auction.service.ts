@@ -1,6 +1,7 @@
 import xlsx from "xlsx";
 import { proto } from "@whiskeysockets/baileys";
 import { associatedsGroup } from "../utils/associateds";
+import axios from "axios";
 
 const workbook = xlsx.readFile("src/data/leilao.xlsx");
 const sheetName = workbook.SheetNames[0];
@@ -19,7 +20,7 @@ let leilaoAtivo: {
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export const startAuction = async (sock: any, remoteJid: string) => {
-  const grupo = associatedsGroup.find((g) => g.keyword.includes("Ilha"));
+  const grupo = associatedsGroup.find((g) => g.keyword.includes("STAFF"));
 
   if (!grupo) return;
 
@@ -48,10 +49,23 @@ const enviarCartaAtual = async (sock: any) => {
     const carta = data[leilaoAtivo.index];
     const mensagem = `🃏 *${carta.nome}*\n📌 *Preço na Liga Pokémon:* R$ ${carta.preco_liga}\n💰 *Preço Inicial:* R$ ${carta.preco_inicial}\n🔺 *Incremento:* R$ ${carta.incremento}\n🏷️ *Estado da Carta:* ${carta.estado_da_carta}`;
 
-    await sock.sendMessage(leilaoAtivo.grupo, {
-      image: { url: carta.imagem },
-      caption: mensagem,
-    });
+    try {
+      const response = await axios.get(carta.imagem, {
+        responseType: "arraybuffer",
+        headers: {
+          "User-Agent": "Mozilla/5.0",
+        },
+      });
+        
+      const imageBuffer = Buffer.from(response.data, "binary");
+    
+      await sock.sendMessage(leilaoAtivo.grupo, {
+        image: imageBuffer,
+        caption: mensagem,
+      });
+    } catch (error:any) {
+      console.error("Erro ao baixar/enviar imagem:", error?.message);
+    }
 
     leilaoAtivo.contadorAtivo = true;
     iniciarContador(sock);
@@ -152,7 +166,9 @@ const enviarResumoCompradores = async (sock: any) => {
       total += parseFloat(carta.valor_venda);
     });
 
-    detalheMensagem += `\n💰 *Total:* R$${total.toFixed(2)}`;
+    detalheMensagem += `\n💰 *Total:* R$${total.toFixed(
+      2
+    )}\nData limite para pagamento: 15/04\nPix ou Picpay: rs.carlosjunior@gmail.com\nEnvie o comprovante para: 27 98853-4645`;
 
     await sock.sendMessage(`${comprador}@s.whatsapp.net`, {
       text: detalheMensagem,

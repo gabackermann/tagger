@@ -8,8 +8,26 @@ export const associatedsGroup = [
   {
     responsibleId: "5527988534645",
     keyword: "STAFF",
+    isPremium: false,
+    spamControl: false,
+  },
+  {
+    responsibleId: "5527988534645",
+    keyword: "Misu",
     isPremium: true,
-    spamControl: true,
+    spamControl: false,
+  },
+  {
+    responsibleId: "5527988534645",
+    keyword: "GOMES",
+    isPremium: true,
+    spamControl: false,
+  },
+  {
+    responsibleId: "5527988534645",
+    keyword: "ZABRE TCG",
+    isPremium: true,
+    spamControl: false,
   },
   {
     responsibleId: "5527988534645",
@@ -31,7 +49,7 @@ export const associatedsGroup = [
   },
   {
     responsibleId: "13996758032",
-    keyword: "Deixei Peguei",
+    keyword: "Deixei.PegueiKids!",
     isPremium: true,
     spamControl: false,
   },
@@ -80,12 +98,6 @@ export const associatedsGroup = [
   {
     responsibleId: "5521971178880",
     keyword: "Aliança",
-    isPremium: false,
-    spamControl: false,
-  },
-  {
-    responsibleId: "5511933396550",
-    keyword: "NICOTCG",
     isPremium: false,
     spamControl: false,
   },
@@ -192,6 +204,12 @@ export const associatedsGroup = [
     spamControl: false,
   },
   {
+    responsibleId: "5549999666442",
+    keyword: "Raven",
+    isPremium: false,
+    spamControl: false,
+  },
+  {
     responsibleId: "5527992052358",
     keyword: "James TCG",
     isPremium: false,
@@ -205,8 +223,20 @@ export const associatedsGroup = [
   },
   {
     responsibleId: "554298097260",
-    keyword: "POKEGIMI",
+    keyword: "POKETICKET",
     isPremium: false,
+    spamControl: false,
+  },
+  {
+    responsibleId: "51999983656",
+    keyword: "GGZ TCG",
+    isPremium: true,
+    spamControl: false,
+  },
+  {
+    responsibleId: "48999990082",
+    keyword: "Equipe - OSS",
+    isPremium: true,
     spamControl: false,
   },
 ];
