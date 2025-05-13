@@ -4,7 +4,7 @@ import makeWASocket, {
 } from "@whiskeysockets/baileys";
 import qrcode from "qrcode-terminal";
 import { handleMessage } from "../controllers/message.controllers";
-import { pino } from "pino";
+// import { pino } from "pino";
 
 let sock: any;
 
@@ -17,7 +17,7 @@ export const connectToWhatsApp = async () => {
     browser: ["Firefox", "MacOS", "117"],
     connectTimeoutMs: 300_000,
     syncFullHistory: false,
-    logger: pino({ level: "warn" }),
+    // logger: pino({ level: "warn" }),
   });
 
   sock.ev.on("creds.update", saveCreds);

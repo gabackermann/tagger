@@ -32,21 +32,21 @@ export const handleCommand = async (
       await isBotAlive(sock, remoteJid);
       break;
 
-    case "!sa":
-      await startAuction(sock, remoteJid);
-      break;
+    // case "!sa":
+    //   await startAuction(sock, remoteJid);
+    //   break;
 
-    case "!l":
-      await registrarLance(sock, mensagem);
-      break;
+    // case "!l":
+    //   await registrarLance(sock, mensagem);
+    //   break;
 
-    case "!n":
-      await proximaCarta(sock);
-      break;
+    // case "!n":
+    //   await proximaCarta(sock);
+    //   break;
 
-    case "!end":
-      await finalizarLeilao(sock);
-      break;
+    // case "!end":
+    //   await finalizarLeilao(sock);
+    //   break;
 
     default:
       return;

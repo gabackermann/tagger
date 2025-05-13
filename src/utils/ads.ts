@@ -1,15 +1,15 @@
 export const propagandas = [
+  // {
+  //   text: "*Assistente de grupo informa:* 🗣:\n\n*VERMILION CARDS*\nGrupo focado em cartas de Pokémon Vintage e High end.\n🫵🏻 FAÇA PARTE:👇🏻\nhttps://chat.whatsapp.com/C5l4qL8uWTj8gR7GqRy1AG",
+  //   image: "https://i.imgur.com/0Zbg200.jpg",
+  // },
   {
-    text: "*Anúncio do Magikarp* 🗣:\n\n*VERMILION CARDS*\nGrupo focado em cartas de Pokémon Vintage e High end.\n🫵🏻 FAÇA PARTE:👇🏻\nhttps://chat.whatsapp.com/C5l4qL8uWTj8gR7GqRy1AG",
-    image: "https://i.imgur.com/0Zbg200.jpg",
+    text: "*Assistente de grupo informa:* 🗣:\n\nEntre no Ilha Cinnabar, leilão hoje as 21horas!!\n Entre já:👇🏻\nhttps://chat.whatsapp.com/EQMnd8NP9HUBDH6RY14202",
+    image: "https://i.imgur.com/XTE52Us.jpg",
   },
   {
-    text: "*Anúncio do Magikarp* 🗣:\n\n⭐️ Spoiler do Primeiro Leilão  Poke 1 TCG ⭐️\n•⁠  ⁠Tudo começando sempre por apenas 1 REAL !!!!!!!\n⭐️ Sejam todos bem vindos! ⭐️\nLink do grupo : https://chat.whatsapp.com/GPBd2UcssiH7Burl1pVTzJ",
-    image: "https://i.imgur.com/ZJDEK9P.jpg",
-  },
-  {
-    text: "*Anúncio do Magikarp* 🗣:\n\n*VERMILION CARDS*\nGrupo focado em cartas de Pokémon Vintage e High end.\n🫵🏻 FAÇA PARTE:👇🏻\nhttps://chat.whatsapp.com/C5l4qL8uWTj8gR7GqRy1AG",
-    image: "https://i.imgur.com/0Zbg200.jpg",
+    text: "*Assistente de grupo informa:* 🗣:\n\nLeilão hoje as 21horas!! ⤴️ \n\nLeilões sempre no melhor preço e todas as cartas com arremate!\n Entre já:\nhttps://chat.whatsapp.com/EQMnd8NP9HUBDH6RY14202",
+    image: "https://i.imgur.com/habSLhi.jpg",
   },
 ];
 

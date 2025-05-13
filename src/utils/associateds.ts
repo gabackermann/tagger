@@ -7,6 +7,12 @@ export const associatedsGroup = [
   },
   {
     responsibleId: "5527988534645",
+    keyword: "TuzzyCards",
+    isPremium: true,
+    spamControl: false,
+  },
+  {
+    responsibleId: "5527988534645",
     keyword: "STAFF",
     isPremium: false,
     spamControl: false,
@@ -32,7 +38,7 @@ export const associatedsGroup = [
   {
     responsibleId: "5527988534645",
     keyword: "Suporte ao assistente de grupos",
-    isPremium: true,
+    isPremium: false,
     spamControl: false,
   },
   {
@@ -43,8 +49,14 @@ export const associatedsGroup = [
   },
   {
     responsibleId: "3597242304",
-    keyword: "DragoStore",
+    keyword: "Nite TCG",
     isPremium: true,
+    spamControl: false,
+  },
+  {
+    responsibleId: "12996862862",
+    keyword: "BenDitto",
+    isPremium: false,
     spamControl: false,
   },
   {
@@ -116,7 +128,7 @@ export const associatedsGroup = [
   {
     responsibleId: "5519995000880",
     keyword: "Temdetudogeek",
-    isPremium: true,
+    isPremium: false,
     spamControl: false,
   },
   {
@@ -140,13 +152,13 @@ export const associatedsGroup = [
   {
     responsibleId: "5511972115879",
     keyword: "pokéhub",
-    isPremium: true,
+    isPremium: false,
     spamControl: false,
   },
   {
     responsibleId: "5511972115879",
     keyword: "pokéhub rifas",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
@@ -162,6 +174,12 @@ export const associatedsGroup = [
     spamControl: false,
   },
   {
+    responsibleId: "554284353780",
+    keyword: "Eevee Empório TCG",
+    isPremium: false,
+    spamControl: false,
+  },
+  {
     responsibleId: "5563984839596",
     keyword: "vogado eeveelutions",
     isPremium: false,
@@ -170,7 +188,7 @@ export const associatedsGroup = [
   {
     responsibleId: "5511989017858",
     keyword: "Elite 3 TCG",
-    isPremium: true,
+    isPremium: false,
     spamControl: false,
   },
   {
@@ -204,6 +222,12 @@ export const associatedsGroup = [
     spamControl: false,
   },
   {
+    responsibleId: "11971190029",
+    keyword: "HoundTCG",
+    isPremium: true,
+    spamControl: false,
+  },
+  {
     responsibleId: "5549999666442",
     keyword: "Raven",
     isPremium: false,
@@ -225,6 +249,24 @@ export const associatedsGroup = [
     responsibleId: "554298097260",
     keyword: "POKETICKET",
     isPremium: false,
+    spamControl: false,
+  },
+  {
+    responsibleId: "554298097260",
+    keyword: "Pokechina",
+    isPremium: false,
+    spamControl: false,
+  },
+  {
+    responsibleId: "559998106‑1037",
+    keyword: "ARK TCG",
+    isPremium: false,
+    spamControl: false,
+  },
+  {
+    responsibleId: "11985536495",
+    keyword: "POKECHAINA",
+    isPremium: true,
     spamControl: false,
   },
   {
