@@ -4,12 +4,12 @@ export const propagandas = [
   //   image: "https://i.imgur.com/0Zbg200.jpg",
   // },
   {
-    text: "*Assistente de grupo informa:* 🗣:\n\nEntre no Ilha Cinnabar, leilão hoje as 21horas!!\n Entre já:👇🏻\nhttps://chat.whatsapp.com/EQMnd8NP9HUBDH6RY14202",
-    image: "https://i.imgur.com/XTE52Us.jpg",
+    text: "*Assistente de grupo informa:* 🗣:\n*Ilha TCG*\nParticipe: https://chat.whatsapp.com/EQMnd8NP9HUBDH6RY14202",
+    image: "https://i.imgur.com/Yd4iuLO.png",
   },
   {
-    text: "*Assistente de grupo informa:* 🗣:\n\nLeilão hoje as 21horas!! ⤴️ \n\nLeilões sempre no melhor preço e todas as cartas com arremate!\n Entre já:\nhttps://chat.whatsapp.com/EQMnd8NP9HUBDH6RY14202",
-    image: "https://i.imgur.com/habSLhi.jpg",
+    text: "*Assistente de grupo informa:* 🗣:\n\n*ILHA TCG* SORTEIOS GRATUITOS MENSAIS!\no que tá esperando?\nParticipe: https://chat.whatsapp.com/EQMnd8NP9HUBDH6RY14202",
+    image: "https://i.imgur.com/Yd4iuLO.png",
   },
 ];
 

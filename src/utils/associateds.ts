@@ -1,7 +1,7 @@
 export const associatedsGroup = [
   {
     responsibleId: "5527988534645",
-    keyword: "Ilha Cinnabar",
+    keyword: "Laboratório",
     isPremium: true,
     spamControl: false,
   },
@@ -14,7 +14,7 @@ export const associatedsGroup = [
   {
     responsibleId: "5527988534645",
     keyword: "STAFF",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
@@ -31,20 +31,20 @@ export const associatedsGroup = [
   },
   {
     responsibleId: "5527988534645",
-    keyword: "ZABRE TCG",
+    keyword: "ZABRE",
     isPremium: true,
     spamControl: false,
   },
   {
     responsibleId: "5527988534645",
     keyword: "Suporte ao assistente de grupos",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
     responsibleId: "11989743724",
     keyword: "Poke Yuan",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
@@ -56,7 +56,7 @@ export const associatedsGroup = [
   {
     responsibleId: "12996862862",
     keyword: "BenDitto",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
@@ -68,7 +68,7 @@ export const associatedsGroup = [
   {
     responsibleId: "13996758032",
     keyword: "OAK",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
@@ -80,7 +80,7 @@ export const associatedsGroup = [
   {
     responsibleId: "5566996616860",
     keyword: "Taberna Nerd",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
@@ -98,7 +98,7 @@ export const associatedsGroup = [
   {
     responsibleId: "5513991510919",
     keyword: "shock league",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
@@ -110,13 +110,13 @@ export const associatedsGroup = [
   {
     responsibleId: "5521971178880",
     keyword: "Aliança",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
     responsibleId: "5517988322708",
     keyword: "Pokécenter",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
@@ -128,7 +128,7 @@ export const associatedsGroup = [
   {
     responsibleId: "5519995000880",
     keyword: "Temdetudogeek",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
@@ -140,19 +140,19 @@ export const associatedsGroup = [
   {
     responsibleId: "5519982544132",
     keyword: "MewEevee",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
     responsibleId: "5511933396550",
     keyword: "NICOTCG",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
     responsibleId: "5511972115879",
     keyword: "pokéhub",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
@@ -170,37 +170,37 @@ export const associatedsGroup = [
   {
     responsibleId: "554284353780",
     keyword: "AuroraGeek",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
     responsibleId: "554284353780",
     keyword: "Eevee Empório TCG",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
     responsibleId: "5563984839596",
     keyword: "vogado eeveelutions",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
     responsibleId: "5511989017858",
     keyword: "Elite 3 TCG",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
     responsibleId: "5521997031062",
     keyword: "pokêtop",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
     responsibleId: "5527998351989",
     keyword: "Zapzone",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
@@ -212,7 +212,7 @@ export const associatedsGroup = [
   {
     responsibleId: "5564992558461",
     keyword: "NineStore",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
@@ -228,39 +228,51 @@ export const associatedsGroup = [
     spamControl: false,
   },
   {
+    responsibleId: "11971190029",
+    keyword: "Shiny",
+    isPremium: true,
+    spamControl: false,
+  },
+  {
     responsibleId: "5549999666442",
     keyword: "Raven",
-    isPremium: false,
+    isPremium: true,
+    spamControl: false,
+  },
+  {
+    responsibleId: "5549999666442",
+    keyword: "Charizard",
+    isPremium: true,
     spamControl: false,
   },
   {
     responsibleId: "5527992052358",
     keyword: "James TCG",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
     responsibleId: "5516993141051",
     keyword: "Escola de Colecionadores",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
     responsibleId: "554298097260",
     keyword: "POKETICKET",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
     responsibleId: "554298097260",
     keyword: "Pokechina",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
     responsibleId: "559998106‑1037",
     keyword: "ARK TCG",
-    isPremium: false,
+    isPremium: true,
     spamControl: false,
   },
   {
