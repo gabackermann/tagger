@@ -2,7 +2,6 @@ import { isRegisteredGroup, isUserAdmin } from "../services/group.service";
 import { getGroupMetadata } from "../services/groupMetadata.service";
 import { availableCommands } from "../utils/avaibleCommands";
 import { handleCommand } from "./commands.controllers";
-import { handleSpam } from "./spam.controllers";
 
 export const handleMessage = async (sock: any, m: any) => {
   const message = m.messages[0];
@@ -31,9 +30,6 @@ export const handleMessage = async (sock: any, m: any) => {
 
   const haveSpamControl = groupIsValid.spamControl;
 
-  if (isLink && isGroupPremium && haveSpamControl) {
-    return handleSpam(sock, m);
-  }
 
   if (command) {
     const sender = message.key.participant || message.participant;
