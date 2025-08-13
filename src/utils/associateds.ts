@@ -35,12 +35,12 @@ export const associatedsGroup = [
     isPremium: true,
     spamControl: false,
   },
-  // {
-  //   responsibleId: "5527988534645",
-  //   keyword: "Misu",
-  //   isPremium: true,
-  //   spamControl: false,
-  // },
+  {
+    responsibleId: "5527988534645",
+    keyword: "Misu",
+    isPremium: true,
+    spamControl: false,
+  },
   {
     responsibleId: "5527988534645",
     keyword: "Card Kingdom",
@@ -113,12 +113,12 @@ export const associatedsGroup = [
     isPremium: true,
     spamControl: false,
   },
-  // {
-  //   responsibleId: "5566996616860",
-  //   keyword: "Taberna Nerd",
-  //   isPremium: true,
-  //   spamControl: false,
-  // },
+  {
+    responsibleId: "5566996616860",
+    keyword: "Taberna Nerd",
+    isPremium: true,
+    spamControl: false,
+  },
   {
     responsibleId: "74988392413",
     keyword: "ZARD",
