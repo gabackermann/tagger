@@ -185,12 +185,18 @@ export const associatedsGroup = [
     isPremium: true,
     spamControl: false,
   },
-  // {
-  //   responsibleId: "5564992558461",
-  //   keyword: "NIGHT TCG",
-  //   isPremium: true,
-  //   spamControl: false,
-  // },
+  {
+    responsibleId: "5564992558461",
+    keyword: "NIGHT TCG",
+    isPremium: true,
+    spamControl: false,
+  },
+  {
+    responsibleId: "5564992558461",
+    keyword: "MAR DE CARTAS",
+    isPremium: true,
+    spamControl: false,
+  },
   {
     responsibleId: "5564992558461",
     keyword: "CAVALLIN TCG",
