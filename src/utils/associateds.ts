@@ -97,7 +97,7 @@ export const associatedsGroup = [
   },
   {
     responsibleId: "11989743724",
-    keyword: "Gomes TCG",
+    keyword: "Gomes",
     isPremium: true,
     spamControl: false,
   },
