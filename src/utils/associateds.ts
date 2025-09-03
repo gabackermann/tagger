@@ -247,7 +247,7 @@ export const associatedsGroup = [
   },
   {
     responsibleId: "5516993141051",
-    keyword: "PokeStore TCG",
+    keyword: "PokeStore",
     isPremium: true,
     spamControl: false,
   },
