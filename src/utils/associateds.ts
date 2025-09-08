@@ -258,6 +258,12 @@ export const associatedsGroup = [
     spamControl: false,
   },
   {
+    responsibleId: "5516993141051",
+    keyword: "D.G",
+    isPremium: true,
+    spamControl: false,
+  },
+  {
     responsibleId: "554298097260",
     keyword: "Pokechina",
     isPremium: true,
