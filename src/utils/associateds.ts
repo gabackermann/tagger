@@ -265,6 +265,12 @@ export const associatedsGroup = [
   },
   {
     responsibleId: "5516993141051",
+    keyword: "Bulbalândia",
+    isPremium: true,
+    spamControl: false,
+  },
+  {
+    responsibleId: "5516993141051",
     keyword: "Tembz",
     isPremium: true,
     spamControl: false,
