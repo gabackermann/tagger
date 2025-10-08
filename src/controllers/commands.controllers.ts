@@ -1,12 +1,6 @@
 import { isBotAlive } from "../services/alive.service";
 import { mentionAll } from "../services/mention.service";
 import { handleRaffleCommand } from "../services/raffle.service";
-import {
-  startAuction,
-  registrarLance,
-  proximaCarta,
-  finalizarLeilao,
-} from "../services/auction.service";
 
 export const handleCommand = async (
   sock: any,
@@ -31,22 +25,6 @@ export const handleCommand = async (
     case "!on":
       await isBotAlive(sock, remoteJid);
       break;
-
-    // case "!sa":
-    //   await startAuction(sock, remoteJid);
-    //   break;
-
-    // case "!l":
-    //   await registrarLance(sock, mensagem);
-    //   break;
-
-    // case "!n":
-    //   await proximaCarta(sock);
-    //   break;
-
-    // case "!end":
-    //   await finalizarLeilao(sock);
-    //   break;
 
     default:
       return;

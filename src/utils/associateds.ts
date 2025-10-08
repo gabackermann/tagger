@@ -287,6 +287,12 @@ export const associatedsGroup = [
     isPremium: true,
     spamControl: false,
   },
+  {
+    responsibleId: "51989529767",
+    keyword: "testestes",
+    isPremium: true,
+    spamControl: false,
+  },
 ];
 
 // export const associatedsGroup = [
